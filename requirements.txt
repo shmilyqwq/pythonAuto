@@ -1,0 +1,9 @@
+pytest
+selenium
+requests
+pytest-xdist
+allure-pytest
+openpyxl
+pandas
+pyyaml
+logging
