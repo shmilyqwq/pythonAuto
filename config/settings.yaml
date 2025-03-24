@@ -1,0 +1,12 @@
+browser:
+  name: chrome
+  headless: false
+  implicit_wait: 10
+
+api:
+  base_url: https://zuul-test.51ake.com
+  timeout: 5
+
+logging:
+  level: INFO
+  file: logs/automation.log

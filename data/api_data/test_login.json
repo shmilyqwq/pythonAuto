@@ -1,0 +1,72 @@
+[
+  {
+    "name": "正常登录",
+    "query_params": {
+      "utoken": "valid_token"
+    },
+    "body_params": {
+      "username": "testuser",
+      "password": "testpass"
+    },
+    "expected_status": 200,
+    "expected_message": "Login successful"
+  },
+  {
+    "name": "缺少 utoken",
+    "query_params": {},
+    "body_params": {
+      "username": "testuser",
+      "password": "testpass"
+    },
+    "expected_status": 200,
+    "expected_message": "Login successful"
+  },
+  {
+    "name": "错误用户名",
+    "query_params": {
+      "utoken": "valid_token"
+    },
+    "body_params": {
+      "username": "wronguser",
+      "password": "testpass"
+    },
+    "expected_status": 401,
+    "expected_message": "Invalid username or password"
+  },
+  {
+    "name": "错误密码",
+    "query_params": {
+      "utoken": "valid_token"
+    },
+    "body_params": {
+      "username": "testuser",
+      "password": "wrongpass"
+    },
+    "expected_status": 401,
+    "expected_message": "Invalid username or password"
+  },
+  {
+    "name": "缺少用户名",
+    "query_params": {
+      "utoken": "valid_token"
+    },
+    "body_params": {
+      "username": "",
+      "password": "testpass"
+    },
+    "expected_status": 400,
+    "expected_message": "Username is required"
+  },
+  {
+    "name": "缺少密码",
+    "query_params": {
+      "utoken": "valid_token"
+    },
+    "body_params": {
+      "username": "testuser",
+      "password": ""
+    },
+    "expected_status": 400,
+    "expected_message": "Password is required"
+  }
+]
